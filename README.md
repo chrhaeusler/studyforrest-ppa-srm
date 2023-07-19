@@ -237,7 +237,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	datalad save -m 'add AO study FoV mask (in MNI152 space)'
 
 	# warp masks from MNI152 into subject spaces
-	# manually add the script 'masks-from-mni-to-bold3Tp2.py' that will call FSL's 'applywarp' command
+	# manually add the script 'masks-from-mni-to-bold3Tp2.py' that will call 'applywarp' of FSL
 	datalad save -m 'add masks-from-mni-to-bold3Tp2.py'
 	# do the warping from MNI152 into subjects spaces
 	# inputs from 'studyforrest-data-templatetransforms' are downloaded by the script
@@ -288,8 +288,8 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	branch | grep "job-*" | xargs git branch -D
 
 
-### Perform the model fit on training subjects' data
-	# manually add scripts that calculate the common functional space and training subjects' transformations
+### Perform the model fit on data of the training subjects
+	# manually add scripts that calculate the common functional space and transformations for the training subjects
 	# ('data_srm_fitting.py', 'data_srm_fitting_venv.sh', 'data_srm_fitting.submit' )
 	datalad save -m 'add scripts to perform SRM fitting (.py, .sh, .sh)'
 	# run it on a computer cluster
