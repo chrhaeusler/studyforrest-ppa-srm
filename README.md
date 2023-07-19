@@ -330,7 +330,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 
 
 ### Calculate statistics
-	# statistics_cronbachs.py
+	# manually add statistics_cronbachs.py
 	datalad save -m 'add script that calculates cronbachs alpha for VIS runs, and AV & AO segments'
 	# run it; outputs results to 'results/statistics_cronbachs.py
 	datalad run -m 'calculate Cronbachs Alpha of empirical Z-maps' \
@@ -341,29 +341,44 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	# run it; outputs results to 'results/statistics_t-tests.csv'
 	datalad run -m 'calculate t-tests' ./code/statistics_t-test-correlations.py 
 
-### ----- from here on, everything is automatized but not yet run via datalad run ------
-
 ### Create Plots
-	# add plot_corr-of-glm-and-srm.py
+	# correlations of modeled hemodynamic reponses and shared responses
+	# manually add 'plot_corr-of-glm-and-srm.py'
 	datalad save -m 'add plot_corr-of-glm-and-srm.py'
-	%run code/plot_corr-of-glm-and-srm.py -model 'sub-01/models/srm-ao-av-vis_feat10-iter30.npz' -o results
-	%run code/plot_corr-of-glm-and-srm.py -model 'sub-01/models/srm-ao-av-vis_shuffled-across_feat10-iter30-0001.npz' -o results
+	# plot actual time series
+	datalad run -m "plot similarity of regressors and shared responses" \
+	./code/plot_corr-of-glm-and-srm.py \
+	-model 'sub-01/models/srm-ao-av-vis_feat10-iter30.npz' \
+	-o results
+	# plot mean of 1000 models
+	datalad run -m "plot similarity of regressors and shared responses based on shuffled runs" \
+	./code/plot_corr-of-glm-and-srm.py \
+	-model 'sub-01/models/srm-ao-av-vis_shuffled-across_feat10-iter30-0001.npz' \
+	-o results
 
-	# plot_cronbachs.py
+	# reliability of empirical Z-maps
+	# manually add 'plot_cronbachs.py'
 	datalad save -m 'add script for plotting stripplot Cronbachs'
-	%run code/plot_cronbachs.py
-
-	# plot_corr-emp-vs-estimation.py
+	# plot it
+	datalad run -m "plot cronbachs alpha of 1st lvl z-maps" \
+	./code/plot_cronbachs.py
+	
+	# correlations of empiricial and predicted Z-maps
+	# manually add 'plot_corr-emp-vs-estimation.py'
 	datalad save -m 'add script for plotting stripplot of correlations'
-
-	%run code/plot_corr-emp-vs-estimation.py \
+	# plot it
+	datalad run -m "plot stripplot of correlations empirical vs. estimation" \
+	./code/plot_corr-emp-vs-estimation.py \
 	-invis './results/corr_vis-ppa-vs-estimation_srm-ao-av-vis_feat10.csv' \
 	-inav './results/corr_av-ppa-vs-estimation_srm-ao-av-vis_feat10.csv' \
 	-inao './results/corr_ao-ppa-vs-estimation_srm-ao-av-vis_feat10.csv'
 
-	# plot_voxel-counts.py
+	# size of ROIs
+	# manually add 'plot_voxel-counts.py'
 	datalad save -m 'add script for plotting voxels per subject-specific mask'
-	%run code/plot_voxel-counts.py
+	# plot it
+	datalad run -m "plot size of ROIs per subject" \
+	./code/plot_voxel-counts.py 
 
 
 <!---
@@ -376,8 +391,6 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 ### plot_bland-altman.py
 	# manually add script that ...
 	datalad save -m 'add script that plots Bland-Altman-Plots'
-
-
 
 # From PPA study; do similarly according to current dataset
 
