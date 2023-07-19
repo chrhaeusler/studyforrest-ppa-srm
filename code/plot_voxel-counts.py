@@ -167,7 +167,7 @@ if __name__ == "__main__":
     os.makedirs(outDir, exist_ok=True)
 
     # save to different file formats
-    extensions = ['pdf', 'png', 'svg']
+    extensions = ['pdf']  # , 'png', 'svg']
     for extension in extensions:
         fpath = os.path.join(outDir, f'plot_voxel-counts.{extension}')
         plt.savefig(fpath, bbox_inches='tight')

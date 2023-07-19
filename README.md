@@ -347,7 +347,6 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	# add plot_corr-of-glm-and-srm.py
 	datalad save -m 'add plot_corr-of-glm-and-srm.py'
 	%run code/plot_corr-of-glm-and-srm.py -model 'sub-01/models/srm-ao-av-vis_feat10-iter30.npz' -o results
-	%run code/plot_corr-of-glm-and-srm.py -model 'sub-01/models/srm-ao-av-vis_shuffled-within_feat10-iter30-0001.npz' -o results
 	%run code/plot_corr-of-glm-and-srm.py -model 'sub-01/models/srm-ao-av-vis_shuffled-across_feat10-iter30-0001.npz' -o results
 
 	# plot_cronbachs.py

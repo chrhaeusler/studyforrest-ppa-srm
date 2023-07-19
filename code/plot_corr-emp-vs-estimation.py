@@ -331,7 +331,7 @@ if __name__ == "__main__":
     # save the figure
     os.makedirs(outDir, exist_ok=True)
 
-    extensions = ['pdf', 'png', 'svg']
+    extensions = ['pdf']  # , 'png', 'svg']
     nfeat = visResults.split('_')[-1].split('.')[0]
     for extension in extensions:
         fpath = os.path.join(outDir,

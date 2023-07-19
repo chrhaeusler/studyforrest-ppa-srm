@@ -223,7 +223,7 @@ def plot_heatmap(title, matrix, outFpath, usedRegressors=[]):
     # create the output path
     os.makedirs(os.path.dirname(outFpath), exist_ok=True)
 
-    extensions = ['pdf', 'png', 'svg']
+    extensions = ['pdf']  # , 'png', 'svg']
     for extension in extensions:
         fpath = os.path.join(f'{out_fpath}.{extension}')
         plt.savefig(fpath, bbox_inches='tight')

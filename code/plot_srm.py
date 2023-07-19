@@ -114,7 +114,7 @@ def plot_feat_x_timepoints(srm):
     plt.tight_layout()
     plt.colorbar()
     # save it
-    plt.savefig(f'test/features{n_feat}_time-points.svg', bbox_inches='tight')
+    plt.savefig(f'test/features{n_feat}_time-points.pdf', bbox_inches='tight')
     plt.close()
 
     return None

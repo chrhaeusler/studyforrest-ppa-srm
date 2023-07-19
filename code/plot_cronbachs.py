@@ -103,6 +103,8 @@ def plot_stripplot(axis, df):
     '''
     ax = sns.stripplot(ax=axis,
                        data=df,
+                       # hue = list(STIMULICOLORS.keys()),
+                       # hue=STIMULICOLORS.keys(),
                        x='stimulus',
                        y="Cronbach's a",
                        palette = STIMULICOLORS,
@@ -163,10 +165,10 @@ if __name__ == "__main__":
     means = pd.pivot_table(df, index='stimulus', aggfunc=np.mean)
     medians = pd.pivot_table(df, index='stimulus', aggfunc=np.median)
 
-# save the figure
+    # save the figure
     os.makedirs(outDir, exist_ok=True)
 
-    extensions = ['pdf', 'png', 'svg']
+    extensions = ['pdf']  # , 'png', 'svg']
     for extension in extensions:
         fpath = os.path.join(outDir, f'plot_cronbachs.{extension}')
         plt.savefig(fpath, bbox_inches='tight')
