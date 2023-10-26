@@ -2,9 +2,9 @@
 
 [![made-with-datalad](https://www.datalad.org/badges/made_with.svg)](https://datalad.org)
 
-This repository contains the raw data and all code to generate the results in
-Chapter 5 of the PhD thesis "Exploring naturalistic stimulus paradigms as an alternative to a
-task-based functional localizer paradigm" written by Häusler, C.O.
+This repository contains the all data and all code to generate the results in
+Chapter 5 of the PhD thesis "Exploring naturalistic stimuli as an alternative to
+a traditional functional localizer" written by Häusler, C.O.
 
 If you have never used [DataLad](https://www.datalad.org/) before, please read the
 section on DataLad datasets below.
