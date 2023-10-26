@@ -270,7 +270,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	datalad save -m 'save grand mean scaled runs (AV, AO, VIS) per subject'
 
 
-### Preprocessing for the SRM
+### Preprocessing for the shared response model (SRM; Chen et al., 2015)
 	# mask, z-score, and concat the time series
 	# manually add 'data_mask_concat_runs.py', 'data_mask_concat_jobs.sh', and 'data_mask_concat_runs.submit'
 	datalad save -m 'add scripts that mask & concat 4D data using HTcondor'
