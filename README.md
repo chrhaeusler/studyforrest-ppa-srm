@@ -90,13 +90,13 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	and transformations between these respective image spaces 
 	(cf. [repo on github](https://github.com/psychoinformatics-de/studyforrest-data-templatetransforms/))
 	- `studyforrest-data-visualrois`: data and results of 
-	[Sengupta, A. et al. (2016)](https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git)
+	[Sengupta, et al. (2016)](https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git)
 	- `studyforrest-ppa-analysis`: data and results of 
 	[Häusler, Eickhoff, & Hanke (2022)](https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis)
 - `masks/`: group masks and atlases
 - `sub-*/`: individual subject folders that contain 
 	- `masks/`: masks in the corresponding subject's voxel space (e.g., PPA and field of view)
-	- `sub-*_task-*_run-*_bold_filtered.nii.gz`: time series that were used as input in FSL in Sengupta et al. (2016), and Häusler, Eickhoff, & Hanke (2022)
+	- `sub-*_task-*_run-*_bold_filtered.nii.gz`: time series that were used as input in FSL in [Sengupta et al. (2016)](https://www.nature.com/articles/sdata201693), and [Häusler, Eickhoff, & Hanke (2022)](https://www.nature.com/articles/s41597-022-01250-4)
 	- `sub-*_task_*_run-*-*_bold-filtered.npy`: masked time series, z-scored per paradigm/run
  	- `sub-*_ao-av-vis_concatenated_zscored.npy`: all paradigms concatenated and z-scored
 	- `models/`: the shared response models calculated from the training subjects' data
@@ -126,13 +126,13 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	. ${FSLDIR}/etc/fslconf/fsl.sh
 	
 	
-### Reproduce results of Sengupta et al. (2016)
+### Reproduce results of [Sengupta et al. (2016)](https://www.nature.com/articles/sdata201693)
 	# install the dataset
 	datalad install -d . -s https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git inputs/studyforrest-data-visualroi
 	
 	# create union of visual ROIs
 	# manually add 'create-roi-overlaps.sh'
-	datalad save -m 'add script to create union of visual rois (Sengupta et al., 2016)'
+	datalad save -m 'add script to create union of visual rois ([Sengupta et al. (2016)](https://github.com/psychoinformatics-de/studyforrest-data-visualrois.git))'
 	# run it; outputs result to 'masks/in_mni'
 	datalad run -m 'create union of visual rois' ./code/create-roi-overlaps.sh
 	
@@ -166,7 +166,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	cd $mainDir
 
 
-### Reproduce results of Häusler, Eickhoff, & Hanke (2022)
+### Reproduce results of [Häusler, Eickhoff, & Hanke (2022)](https://www.nature.com/articles/s41597-022-01250-4)
 	# install the dataset
 	datalad install -d . -s https://gin.g-node.org/chaeusler/studyforrest-ppa-analysis inputs/studyforrest-ppa-analysis
 	
@@ -259,7 +259,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	./code/masks-builder-voxel-counter.py
 
 
-### Reproduce time series of Sengupta et al. (2016) and Häusler, Eickhoff, & Hanke (2022)
+### Reproduce time series of [Sengupta et al. (2016)](https://www.nature.com/articles/sdata201693) and [Häusler, Eickhoff, & Hanke (2022)](https://www.nature.com/articles/s41597-022-01250-4)
 	# FSL does not save a grand mean scaled version of the time series, so let's do it 
     # manually add 'grand_mean_for_4d.py' and 'grand_mean_for_4d.submit'
 	datalad save -m 'add scripts that apply grand mean scaling to filtered functional data per subj & run'
@@ -270,7 +270,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	datalad save -m 'save grand mean scaled runs (AV, AO, VIS) per subject'
 
 
-### Preprocessing for the shared response model (SRM; Chen et al., 2015)
+### Preprocessing for the shared response model (SRM; [Chen et al., 2015](https://proceedings.neurips.cc/paper_files/paper/2015/file/b3967a0e938dc2a6340e258630febd5a-Paper.pdf))
 	# mask, z-score, and concat the time series
 	# manually add 'data_mask_concat_runs.py', 'data_mask_concat_jobs.sh', and 'data_mask_concat_runs.submit'
 	datalad save -m 'add scripts that mask & concat 4D data using HTcondor'
