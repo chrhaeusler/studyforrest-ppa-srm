@@ -2,7 +2,7 @@
 
 [![made-with-datalad](https://www.datalad.org/badges/made_with.svg)](https://datalad.org)
 
-This repository contains the all data and all code to generate the results in
+This repository contains all data and code to generate the results in
 Chapter 5 of the PhD thesis "Exploring naturalistic stimuli as an alternative to
 a traditional functional localizer" written by Häusler, C.O.
 
@@ -377,7 +377,7 @@ More information on DataLad and how to use it can be found in the DataLad Handbo
 	# manually add 'plot_voxel-counts.py'
 	datalad save -m 'add script for plotting voxels per subject-specific mask'
 	# plot it
-	datalad run -m "plot size of ROIs per subject" \
+	datalad run -m 'plot size of ROIs per subject' \
 	./code/plot_voxel-counts.py 
 
 <!---
