@@ -3,8 +3,8 @@
 [![made-with-datalad](https://www.datalad.org/badges/made_with.svg)](https://datalad.org)
 
 This repository contains all data and code to generate the results in
-Chapter 5 of the PhD thesis "Exploring naturalistic stimuli as an alternative to
-a traditional functional localizer" written by Häusler, C.O.
+Chapter 5 of the PhD thesis "[Exploring naturalistic stimuli as an alternative to
+a traditional functional localizer](https://d-nb.info/134395861X/34)" written by Häusler, C.O.
 
 If you have never used [DataLad](https://www.datalad.org/) before, please read the
 section on DataLad datasets below.
